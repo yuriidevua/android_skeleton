@@ -1,7 +1,7 @@
 object Depend {
     val supportAndroidLibs = arrayOf(
-        "androidx.annotation:annotation:${Versions.SupportAndroidLibs.supportLibrary}",
-        "androidx.appcompat:appcompat:${Versions.SupportAndroidLibs.supportLibrary}",
+        "androidx.annotation:annotation:${Versions.SupportAndroidLibs.supportLibraryAnnotation}",
+        "androidx.appcompat:appcompat:${Versions.SupportAndroidLibs.supportLibraryAppCompat}",
         "androidx.cardview:cardview:${Versions.SupportAndroidLibs.cardView}",
         "androidx.recyclerview:recyclerview:${Versions.SupportAndroidLibs.recyclerview}",
         "com.google.android.material:material:${Versions.SupportAndroidLibs.materialDesign}",

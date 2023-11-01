@@ -14,7 +14,8 @@ object Versions {
     const val buildTools = "34.0.0"
     const val sharedName = "shared_app"
     object SupportAndroidLibs {
-        const val supportLibrary = "1.5.0"
+        const val supportLibraryAppCompat = "1.6.1"
+        const val supportLibraryAnnotation = "1.5.0"
         const val supportLegacyLibrary = "1.3.1"
         const val multiDex = "2.0.1"
         const val constraintLayout = "2.1.4"
