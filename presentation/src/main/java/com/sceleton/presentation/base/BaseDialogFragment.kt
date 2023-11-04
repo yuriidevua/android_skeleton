@@ -57,7 +57,7 @@ abstract class BaseDialogFragment<Binding : ViewDataBinding> : DaggerAppCompatDi
 
     @get:LayoutRes
     protected abstract val layoutRes: Int
-    protected fun toast(message: String?) {
+    fun onMessage(message: String) {
         Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
     }
 

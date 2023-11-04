@@ -7,7 +7,7 @@ import com.sceleton.presentation.base.BasePresenter
 import com.sceleton.presentation.databinding.FragmentDialogExampleBinding
 import javax.inject.Inject
 
-class DialogExample : BaseDialogFragment<FragmentDialogExampleBinding>() {
+class DialogExample : BaseDialogFragment<FragmentDialogExampleBinding>(), IDialogExample.View{
     override val layoutRes: Int = R.layout.fragment_dialog_example
     @Inject
     lateinit var presenter:IDialogExample.Presenter
@@ -29,8 +29,4 @@ class DialogExample : BaseDialogFragment<FragmentDialogExampleBinding>() {
     override fun detachFragment() {
 
     }
-
-
-
-
 }
