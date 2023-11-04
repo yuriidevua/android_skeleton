@@ -67,9 +67,9 @@ abstract class BaseDialogFragment<Binding : ViewDataBinding> : DaggerAppCompatDi
         }
     }
 
-    fun stepError(exception: Throwable?) {
+    fun errorStep(exception: Throwable) {
         if (emitter != null) {
-            emitter!!.onError(exception!!)
+            emitter!!.onError(exception)
         }
     }
 

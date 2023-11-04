@@ -2,8 +2,10 @@ package com.sceleton.presentation.router
 
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.sceleton.comm.ErrorType
 import com.sceleton.presentation.base.BaseDialogFragment
 import com.sceleton.presentation.base.BaseViewActivityContract
+import com.sceleton.presentation.dialog_fragment.DialogExample
 import dagger.android.support.DaggerAppCompatActivity
 import dagger.android.support.R
 import io.reactivex.rxjava3.core.Single
@@ -27,9 +29,22 @@ class Router @Inject constructor(private val view : BaseViewActivityContract,
 
     override fun onBackPressed() = super.backPressedRouter()
 
-    override fun <T : BaseDialogFragment<*>> stepDialog(fragment: T): Single<Int> = Single.defer {
+     private fun <T : BaseDialogFragment<*>> stepDialog(fragment: T): Single<Int> = Single.defer {
             super.transactionFragmentDialog(fragment, R.id.content)
             Single.create(fragment::setEmitter)
+    }
+
+    override fun dialogTransaction(cmd : String) : Single<Int>{
+       return when(cmd){
+            ConstRouter.DIALOG_EXAMPLE.route -> {
+                 val frag = DialogExample.newInstance()
+                 stepDialog(frag)
+                     .doOnSuccess{closeFragmentDialog(frag)}
+                     .doOnError{closeFragmentDialog(frag)}
+            }else -> {
+                 Single.error(Throwable(ErrorType.ERROR.type))
+            }
+        }
     }
 
     override fun setAppBarText(name: String) = view.setAppBarText(name)

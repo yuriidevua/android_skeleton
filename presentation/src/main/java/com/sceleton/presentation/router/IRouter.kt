@@ -13,7 +13,7 @@ interface IRouter {
 
     fun onBackPressed()
 
-    fun <T : BaseDialogFragment<*>> stepDialog(fragment: T): Single<Int>
+    fun dialogTransaction(cmd : String) : Single<Int>
 
     fun setAppBarText(name: String)
 

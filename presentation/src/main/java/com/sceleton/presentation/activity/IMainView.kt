@@ -9,6 +9,6 @@ interface IMainView {
     }
 
     interface Presenter : BasePresenter {
-
+        fun startExampleDialog()
     }
 }
