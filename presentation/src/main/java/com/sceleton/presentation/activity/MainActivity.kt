@@ -10,10 +10,6 @@ import javax.inject.Inject
 class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView.View {
     @Inject
     lateinit var presenter: IMainView.Presenter
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
 
     override val layoutRes: Int = R.layout.activity_main
 
